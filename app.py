@@ -206,7 +206,6 @@ def thankyou():
     prediction = request.args.get("prediction")
     filename = request.args.get("filename")
     return render_template("thankyou.html", prediction=prediction, filename=filename)
-from datetime import datetime
 
 @app.route("/submissions")
 def view_submissions():
@@ -230,10 +229,8 @@ def email_logs_view():
                 pass
     return render_template("email_logs.html", logs=logs)
 
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 10000))
+    app.run(host='0.0.0.0', port=port, debug=True)
 
-
-
-
-if __name__ == "__main__":
-    app.run(debug=True, port=10000)
 
