@@ -1,0 +1,8 @@
+# Ignore environment file and uploads
+.env
+uploads/
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,8 @@
+Flask==2.3.3
+Flask-Cors==4.0.0
+numpy==1.24.4
+pillow==10.2.0
+tensorflow==2.14.0
+h5py==3.10.0
+python-dotenv==1.0.1
+pymongo==4.6.3

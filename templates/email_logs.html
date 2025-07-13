@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CivicLens Email Logs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <div class="container mx-auto p-6">
+      <div class="flex items-center justify-between mb-6">
+        <h1 class="text-3xl font-bold text-blue-900">📨 Email Logs</h1>
+        <a
+          href="/download-email-logs"
+          class="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition"
+        >
+          ⬇️ Download CSV
+        </a>
+      </div>
+
+      <div class="overflow-x-auto bg-white rounded shadow">
+        <table class="min-w-full text-sm text-left">
+          <thead class="bg-blue-100 text-blue-800">
+            <tr>
+              <th class="py-2 px-4">To</th>
+              <th class="py-2 px-4">Subject</th>
+              <th class="py-2 px-4">Issue Type</th>
+              <th class="py-2 px-4">Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for log in logs %}
+            <tr class="border-b">
+              <td class="py-2 px-4">{{ log.to }}</td>
+              <td class="py-2 px-4">{{ log.subject }}</td>
+              <td class="py-2 px-4">{{ log.issue_type }}</td>
+              <td class="py-2 px-4">
+                {{ log.timestamp.strftime('%Y-%m-%d %H:%M:%S') if log.timestamp else 'N/A' }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

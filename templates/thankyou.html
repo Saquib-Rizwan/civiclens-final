@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You - CivicLens</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-blue-50 p-10 text-center">
+  <h1 class="text-3xl font-bold text-blue-800 mb-4">✅ Report Submitted Successfully!</h1>
+  <p class="text-lg">Predicted Issue: <span class="font-semibold text-gray-800">{{ prediction }}</span></p>
+  <div class="mt-6">
+    <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Submitted Image" class="mx-auto rounded shadow max-h-96">
+  </div>
+  <a href="/" class="mt-8 inline-block text-blue-600 hover:underline">Submit Another Report</a>
+</body>
+</html>
