@@ -121,7 +121,6 @@ def report():
     "prediction": predicted_class
 })
 
-<<<<<<< HEAD
     except Exception as e:
         app.logger.error("Prediction failed", exc_info=e)
         return jsonify({"error": "Prediction failed"}), 500
@@ -237,10 +236,4 @@ def email_logs_view():
 
 if __name__ == "__main__":
     app.run(debug=True, port=10000)
-=======
-# Run server
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=10000)
-
->>>>>>> 5c74f2519e818f93ab7bf12fbcc6d0dad0330f72
 
