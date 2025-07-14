@@ -10,10 +10,11 @@
         const form = event.target;
         const formData = new FormData(form);
 
-        fetch("http://127.0.0.1:10000/report", {
-          method: "POST",
-          body: formData,
-        })
+        fetch("/report", {
+        method: "POST",
+        body: formData,
+          })
+
           .then((res) => res.json())
           .then((data) => {
             window.location.href = `thankyou.html?prediction=${encodeURIComponent(data.prediction)}&filename=${encodeURIComponent(data.filename)}`;
