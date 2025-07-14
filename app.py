@@ -25,9 +25,11 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
+
 UPLOAD_FOLDER = "uploads"
 MODEL_PATH = "ai_model/model.h5"
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
+os.makedirs("uploads", exist_ok=True)
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
